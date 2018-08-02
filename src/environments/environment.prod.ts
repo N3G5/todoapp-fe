@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://backend'
+  apiUrl: 'http://backend-kalo-openshift-alm.router.default.svc.cluster.local'
 };

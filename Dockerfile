@@ -19,3 +19,21 @@ ARG configuration=production
 RUN npm run build -- --output-path=/usr/share/nginx/html --configuration $configuration
 
 COPY  /nginx.conf /etc/nginx/conf.d/default.conf
+
+# Because we build from a windows host, adapt file exec flags
+RUN find /etc/nginx/ -type f -exec chmod a-x {} \;	
+
+# ensure www-data user exists
+RUN set -x \
+       && adduser -u 82 -D -S -G root www-data
+
+# Adapt access rights for users which have an effective GID of 0. 
+# This is required because OpenShift runs containers with random users which have an effective ID of 0
+RUN touch /var/run/nginx.pid \
+   && chown -R www-data:root /var/run/nginx.pid \
+   && chown -R www-data:root /var/cache/nginx \
+   && chmod -R g+w /var/run/nginx.pid \
+   && chmod -R g+w /var/cache/nginx
+
+# Ensure to run as non-root
+USER www-data

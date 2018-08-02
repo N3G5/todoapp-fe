@@ -21,7 +21,7 @@ RUN npm run build -- --output-path=/usr/share/nginx/html --configuration $config
 COPY  /nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose the application ports
-EXPOSE 9075
+EXPOSE 9123
 
 # Because we build from a windows host, adapt file exec flags
 RUN find /etc/nginx/ -type f -exec chmod a-x {} \;	

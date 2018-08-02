@@ -2,6 +2,7 @@ import { environment } from '../environments/environment';
 import {Todo} from './todo';
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
+import { log } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class TodoService {
   constructor(private http: Http) {}
 
   getTodos(): Promise<Todo[]> {
+    log('Trying to call ' + this.baseUrl + '/api/todos/');
     return this.http.get(this.baseUrl + '/api/todos/')
       .toPromise()
       .then(response => response.json() as Todo[])
@@ -20,6 +22,7 @@ export class TodoService {
   }
 
   createTodo(todoData: Todo): Promise<Todo> {
+    log('Trying to call ' + this.baseUrl + '/api/todos/ with data: ' + todoData);
     return this.http.post(this.baseUrl + '/api/todos/', todoData)
       .toPromise().then(response => response.json() as Todo)
       .catch(this.handleError);

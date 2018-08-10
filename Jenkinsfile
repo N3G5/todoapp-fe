@@ -1,8 +1,12 @@
           pipeline {
-            agent {
-              dockerfile true
-            }
+             agent none
             stages {
+            
+            stage('Build Docker Image') {
+             	agent {
+             	    dockerfile true
+             	}
+             }
               stage('Create DEV') {
                 when {
                   expression {
@@ -20,8 +24,8 @@
                         def app = openshift.newApp("frontend:latest")
                         app.narrow("svc").expose();
 
-                        openshift.set("probe dc/frontend --readiness --get-url=http://:8080/ws/demo/healthcheck --initial-delay-seconds=30 --failure-threshold=10 --period-seconds=10")
-                        openshift.set("probe dc/frontend --liveness  --get-url=http://:8080/ws/demo/healthcheck --initial-delay-seconds=180 --failure-threshold=10 --period-seconds=10")
+                        openshift.set("probe dc/frontend --readiness --get-url=http://:8080 --initial-delay-seconds=30 --failure-threshold=10 --period-seconds=10")
+                        openshift.set("probe dc/frontend --liveness  --get-url=http://:8080 --initial-delay-seconds=180 --failure-threshold=10 --period-seconds=10")
 
                         def dc = openshift.selector("dc", "frontend")
                         while (dc.object().spec.replicas != dc.object().status.availableReplicas) {

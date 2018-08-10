@@ -15,7 +15,7 @@
                   script {
                     openshift.withCluster() {
                       openshift.withProject(env.DEV_PROJECT) {
-                        openshift.newBuild("--name=frontend")
+                        openshift.newBuild("--name=frontend", "http://gogs.todolist.datenplattform.tk/gogs/todoapp-fe.git")
                       }
                     }
                   }

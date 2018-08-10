@@ -1,11 +1,14 @@
           pipeline {
              agent none
             stages {
-            
             stage('Build Docker Image') {
              	agent {
              	    dockerfile true
              	}
+             	steps {
+             	    echo 'Building Docker Image'
+             	}
+
              }
               stage('Create DEV') {
                 when {

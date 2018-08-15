@@ -11,7 +11,7 @@
               	     stage('Code Analysis') {
 		                steps {
 		                  withSonarQubeEnv {
-		                    sh "npm clean sonarqube"
+		                    sh "sonar-scanner -Dsonar.host.url=http://sonarqube:9000"
 		                  }
 		                }
               		}

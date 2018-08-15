@@ -11,7 +11,7 @@
               	     stage('Code Analysis') {
 		                steps {
 		                  script {
-		                    sh "sonarqube"
+		                    sh "sonar:sonar -Dsonar.host.url=http://sonarqube:9000"
 		                  }
 		                }
               		}

@@ -10,7 +10,7 @@
 //          			}  
               	     stage('Code Analysis') {
 		                steps {
-		                  nodejs() {
+		                  nodejs(nodeJSInstallationName: 'nodejs1070') {
 		                    sh "sonar-scanner -Dsonar.host.url=http://sonarqube:9000"
 		                  }
 		                }

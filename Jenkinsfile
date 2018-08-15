@@ -6,7 +6,7 @@
                    stage('Test') {
 		                steps {
 		                	nodejs(nodeJSInstallationName: 'nodejs1070'){
-			                  sh "npm e2e"
+			                  sh "ng e2e"
 		                	}
 		                }
           			}  

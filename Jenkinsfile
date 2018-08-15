@@ -3,11 +3,13 @@
             stages {
             stage('Test and Code Analysis') {
               	parallel {
-//                   stage('Test') {
-//		                steps {
-//		                  sh "ng test"
-//		                }
-//          			}  
+                   stage('Test') {
+		                steps {
+		                	nodejs(nodeJSInstallationName: 'nodejs1070'){
+			                  sh "npm test"
+		                	}
+		                }
+          			}  
               	     stage('Code Analysis') {
 		                steps {
 		                  nodejs(nodeJSInstallationName: 'nodejs1070') {

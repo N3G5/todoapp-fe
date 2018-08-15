@@ -10,8 +10,8 @@
 //          			}  
               	     stage('Code Analysis') {
 		                steps {
-		                  script {
-		                    sh "sonar-scanner -Dsonar.host.url=http://sonarqube:9000"
+		                  withSonarQubeEnv {
+		                    sh "npm clean sonarqube"
 		                  }
 		                }
               		}

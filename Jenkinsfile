@@ -1,17 +1,20 @@
           pipeline {
              agent any
             stages {
+            stage('Prepare environment') {
+               steps {
+		        	nodejs(nodeJSInstallationName: 'nodejs1070'){
+		            	sh "npm install"      
+		       }    
+            }
+            }
+
             stage('Test and Code Analysis') {
-            	steps {
-            	   nodejs(nodeJSInstallationName: 'nodejs1070'){
-     					sh "npm install"
-            	   }
-            	}
               	parallel {
-              		
                    stage('Test') {
 		                steps {
 		                	nodejs(nodeJSInstallationName: 'nodejs1070'){
+		                	  sh "npm install"
 			                  sh "ng test"
 		                	}
 		                }

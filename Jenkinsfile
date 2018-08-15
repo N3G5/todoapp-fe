@@ -14,7 +14,6 @@
                    stage('Test') {
 		                steps {
 		                	nodejs(nodeJSInstallationName: 'nodejs1070'){
-		                	  sh "npm install"
 			                  sh "ng test"
 		                	}
 		                }

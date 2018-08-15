@@ -1,6 +1,22 @@
           pipeline {
              agent any
             stages {
+            stage('Test and Code Analysis') {
+              	parallel {
+                   stage('Test') {
+		                steps {
+		                  sh "ng test"
+		                }
+          			}  
+              	     stage('Code Analysis') {
+		                steps {
+		                  script {
+		                    sh "sonarqube"
+		                  }
+		                }
+              		}
+              	}
+              }
             stage('Create Image Builder') {
                 when {
                   expression {

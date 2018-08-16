@@ -20,7 +20,7 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml', 'dots', 'junit'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -28,4 +28,7 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     singleRun: false
   });
+  junitReporter = {
+  		outputFile: 'test-results.xml'
+  }
 };

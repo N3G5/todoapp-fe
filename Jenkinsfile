@@ -12,11 +12,9 @@
             stage('Test and Code Analysis') {
               	parallel {
                    stage('Test') {
-//		                steps {
-//		                	nodejs(nodeJSInstallationName: 'nodejs1070'){
-//			                  sh "ng test"
-//		                	}
-//		                }
+		                steps {
+			                  sh "echo 'run frontend tests'"
+		                }
           			}  
               	     stage('Code Analysis') {
 		                steps {

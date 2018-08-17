@@ -3,4 +3,8 @@ export class Todo {
   title: string;
   completed: boolean;
   createdAt: Date;
+  priority: string;
+  constructor() {
+    this.priority = 'LOW';
+  }
 }

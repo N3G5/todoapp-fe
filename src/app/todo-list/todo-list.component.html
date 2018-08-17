@@ -8,11 +8,11 @@
 			<div *ngIf="title.errors && title.dirty" class="alert alert-danger">
 				<div [hidden]="!title.errors.required">Title is required.</div>
 			</div>
-			<input type="radio" value="1" [(ngModel)]="newTodo.priority"
+			<input type="radio" value="LOW" [(ngModel)]="newTodo.priority"
 				name="priority"> LOW 
-			<input type="radio" value="2"
+			<input type="radio" value="MEDIUM"
 				[(ngModel)]="newTodo.priority" name="priority"> MEDIUM 
-			<input type="radio" value="3" [(ngModel)]="newTodo.priority"
+			<input type="radio" value="HIGH" [(ngModel)]="newTodo.priority"
 				name="priority"> HIGH
 		</form>
 	</div>

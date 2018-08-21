@@ -71,7 +71,7 @@
                     openshift.withCluster() {
                       openshift.withProject(env.DEV_PROJECT) {
                         def app = openshift.newApp("frontend:latest")
-                        app.narrow("svc").expose("--hostname=todolist.datenplattform.tk");
+                        app.narrow("svc").expose("--hostname=todolist.datenplattform.tk", "--port 9075");
 
 //                        openshift.set("probe dc/frontend --readiness --get-url=http://:80 --initial-delay-seconds=30 --failure-threshold=10 --period-seconds=10")
 //                        openshift.set("probe dc/frontend --liveness  --get-url=http://:80 --initial-delay-seconds=180 --failure-threshold=10 --period-seconds=10")

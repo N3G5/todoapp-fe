@@ -8,11 +8,17 @@
 			<div *ngIf="title.errors && title.dirty" class="alert alert-danger">
 				<div [hidden]="!title.errors.required">Title is required.</div>
 			</div>
+			<input type="radio" value="LOW" [(ngModel)]="newTodo.priority"
+				name="priority"> LOW 
+			<input type="radio" value="MEDIUM" [(ngModel)]="newTodo.priority" 
+				name="priority"> MEDIUM 
+			<input type="radio" value="HIGH" [(ngModel)]="newTodo.priority"
+				name="priority"> HIGH
 		</form>
 	</div>
 	<ul class="todo-list">
 		<li *ngFor="let todo of todos"
-			[class.completed]="todo.completed === true">
+			[class.completed]="todo.completed === true" [class]="todo.priority">
 			<div class="todo-row" *ngIf="!editing || editingTodo.id != todo.id">
 				<a class="todo-completed" (click)="toggleCompleted(todo)"> <i
 					class="material-icons toggle-completed-checkbox"></i>
@@ -32,6 +38,9 @@
 				</a> <a (click)="clearEditing()"> <i class="material-icons">clear</i>
 				</a>
 				</span>
+				<input type="radio" value="LOW" [(ngModel)]="editingTodo.priority" name="priority"> LOW 
+				<input type="radio" value="MEDIUM"	[(ngModel)]="editingTodo.priority" name="priority"> MEDIUM 
+				<input type="radio" value="HIGH" [(ngModel)]="editingTodo.priority"	name="priority"> HIGH
 			</div>
 		</li>
 	</ul>

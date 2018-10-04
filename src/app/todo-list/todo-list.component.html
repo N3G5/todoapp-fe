@@ -11,7 +11,7 @@
 		</form>
 	</div>
 	<ul class="todo-list">
-		<li *ngFor="let todo of todos"
+		<li *ngFor="let todo of todos; first as isFirst; last as isLast"
 			[class.completed]="todo.completed === true">
 			<div class="todo-row" *ngIf="!editing || editingTodo.id != todo.id">
 				<a class="todo-completed" (click)="toggleCompleted(todo)">
@@ -22,8 +22,11 @@
 					<a (click)="editTodo(todo)"> <i class="material-icons edit">edit</i> </a>
 					<a (click)="deleteTodo(todo.id)"> <i class="material-icons delete">clear</i> </a>
 					<!-- 2a -->
-					<a (click)="moveTodoUp(todo)"> <i class="material-icons arrow_drop_up">arrow_drop_up</i> </a>
-					<a (click)="moveTodoDown(todo)"> <i class="material-icons arrow_drop_down">arrow_drop_down</i> </a>
+					<!-- show for first and last item, the buttons without click event -->
+					<a *ngIf="!isFirst" (click)="moveTodoUp(todo)"> <i class="material-icons arrow_drop_up">arrow_drop_up</i> </a>
+					<a *ngIf="isFirst"> <i class="material-icons arrow_drop_up no-click">arrow_drop_up</i> </a>
+					<a *ngIf="!isLast" (click)="moveTodoDown(todo)"> <i class="material-icons arrow_drop_down">arrow_drop_down</i> </a>
+					<a *ngIf="isLast"> <i class="material-icons arrow_drop_down no-click">arrow_drop_down</i> </a>					
 				</span>
 			</div>
 			<div class="todo-edit" *ngIf="editing && editingTodo.id === todo.id">

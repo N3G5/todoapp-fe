@@ -156,6 +156,11 @@ li.completed .todo-title {
   color: #757575;
 }
 
-li.completed i {
+li.completed i :not(no-click) {
   color: #757575;
+}
+
+.no-click {
+	color: #bbb;
+	cursor: default;
 }

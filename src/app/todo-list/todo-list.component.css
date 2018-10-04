@@ -130,9 +130,14 @@ input {
   background-color: #f4f4f4;
 }
 
-.todo-content .todo-edit input{
+.todo-content .todo-edit input text{
   width: calc(100% - 80px);
   height: 35px;
+}
+
+/* 1a */
+.todo-edit {
+	color: black;
 }
 
 .todo-content .edit-actions {
@@ -158,6 +163,21 @@ li.completed .todo-title {
 
 li.completed i :not(no-click) {
   color: #757575;
+}
+
+/* 1b */
+.LOW {
+	color: #008000;
+}
+
+/* 1b */
+ .MEDIUM {
+	color: #FFCC00;
+}
+
+/* 1b */
+ .HIGH {
+	color: #FF0000;
 }
 
 .no-click {

@@ -4,4 +4,9 @@ export class Todo {
   completed: boolean;
   createdAt: Date;
   ranking: number; // 2a
+  priority: string; // 1a
+  // 1a
+  constructor() {
+    this.priority = 'LOW';
+  }
 }

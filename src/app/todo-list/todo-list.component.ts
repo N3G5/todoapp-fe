@@ -70,4 +70,22 @@ export class TodoListComponent implements OnInit {
     this.editing = false;
   }
 
+  // 2a
+  moveTodoUp(todo: Todo): void {
+    console.log("Move todo " + JSON.stringify(todo) + " up.");
+    var self = this;
+    this.todoService.moveTodoUp(todo).then(() => {
+      self.getTodos();
+    });
+  }
+
+  // 2a
+  moveTodoDown(todo: Todo): void {
+    console.log("Move todo " + JSON.stringify(todo) + " down.");
+    var self = this;
+    this.todoService.moveTodoDown(todo).then(() => {
+      self.getTodos();
+    });
+  }
+
 }

@@ -92,7 +92,7 @@ input {
 }
 
 .todo-content .todo-title {
-  width: calc(100% - 160px);
+  width: calc(100% - 200px);
   margin-left: 10px;
   overflow: hidden;
   text-overflow: ellipsis;

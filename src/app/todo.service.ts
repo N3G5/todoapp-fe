@@ -41,6 +41,22 @@ export class TodoService {
       .catch(this.handleError);
   }
 
+  // 2a
+  moveTodoUp(todo: Todo): Promise<{}> {
+    return this.http.put(this.baseUrl + '/api/todos/moveup/' + todo.id, todo)
+      .toPromise()
+      .then(response => response)
+      .catch(this.handleError);
+  }
+
+  // 2a
+  moveTodoDown(todo: Todo): Promise<{}> {
+    return this.http.put(this.baseUrl + '/api/todos/movedown/' + todo.id, todo)
+      .toPromise()
+      .then(response => response)
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('Some error occured', error);
     return Promise.reject(error.message || error);

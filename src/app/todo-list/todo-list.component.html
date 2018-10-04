@@ -14,14 +14,16 @@
 		<li *ngFor="let todo of todos"
 			[class.completed]="todo.completed === true">
 			<div class="todo-row" *ngIf="!editing || editingTodo.id != todo.id">
-				<a class="todo-completed" (click)="toggleCompleted(todo)"> <i
-					class="material-icons toggle-completed-checkbox"></i>
-				</a> <span class="todo-title"> {{todo.title}} </span> <span
-					class="todo-actions"> <a (click)="editTodo(todo)"> <i
-						class="material-icons edit">edit</i>
-				</a> <a (click)="deleteTodo(todo.id)"> <i
-						class="material-icons delete">clear</i>
+				<a class="todo-completed" (click)="toggleCompleted(todo)">
+					<i class="material-icons toggle-completed-checkbox"></i>
 				</a>
+				<span class="todo-title"> {{todo.title}} </span>
+				<span class="todo-actions">
+					<a (click)="editTodo(todo)"> <i class="material-icons edit">edit</i> </a>
+					<a (click)="deleteTodo(todo.id)"> <i class="material-icons delete">clear</i> </a>
+					<!-- 2a -->
+					<a (click)="moveTodoUp(todo)"> <i class="material-icons arrow_drop_up">arrow_drop_up</i> </a>
+					<a (click)="moveTodoDown(todo)"> <i class="material-icons arrow_drop_down">arrow_drop_down</i> </a>
 				</span>
 			</div>
 			<div class="todo-edit" *ngIf="editing && editingTodo.id === todo.id">

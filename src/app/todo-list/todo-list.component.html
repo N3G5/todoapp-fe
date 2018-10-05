@@ -12,7 +12,7 @@
 	</div>
 	<ul class="todo-list">
 		<li *ngFor="let todo of todos"
-			[class.completed]="todo.completed === true">
+			[ngClass]="todo.completed === true ? 'completed' : ''">
 			<div class="todo-row" *ngIf="!editing || editingTodo.id != todo.id">
 				<a class="todo-completed" (click)="toggleCompleted(todo)"> <i
 					class="material-icons toggle-completed-checkbox"></i>

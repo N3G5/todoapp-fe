@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoService } from './todo.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient, HttpHandler } from '@angular/common/http';
@@ -10,7 +11,8 @@ import { HttpClientModule, HttpClient, HttpHandler } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoItemComponent
   ],
   imports: [
     BrowserModule,

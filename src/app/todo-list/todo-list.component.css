@@ -17,11 +17,6 @@ h1 {
   box-sizing: border-box;
 }
 
-i {
-  vertical-align: middle;
-  color: #626262;
-}
-
 input {
   border: 1px solid #E8E8E8;
 }
@@ -86,11 +81,6 @@ input {
     border-bottom: 1px solid #E8E8E8;
 }
 
-.todo-content ul li span {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .todo-content .todo-title {
   width: calc(100% - 200px);
   margin-left: 10px;
@@ -98,71 +88,8 @@ input {
   text-overflow: ellipsis;
 }
 
-.todo-content .todo-completed {
-  display: inline-block;
-  text-align: center;
-  width:35px;
-  height:35px;
-  cursor: pointer;
-}
-
-.todo-content .todo-completed i {
-  font-size: 20px;
-}
-
-.todo-content .todo-actions, .todo-content .edit-actions {
-    float: right;
-}
-
-.todo-content .todo-actions i, .todo-content .edit-actions i {
-    font-size: 17px;
-}
-
-.todo-content .todo-actions a, .todo-content .edit-actions a {
-  display: inline-block;
-  text-align: center;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-}
-
-.todo-content .todo-actions a:hover, .todo-content .edit-actions a:hover {
-  background-color: #f4f4f4;
-}
-
-.todo-content .todo-edit input text{
-  width: calc(100% - 80px);
-  height: 35px;
-}
-
-/* 1a */
-.todo-edit {
-	color: black;
-}
-
-.todo-content .edit-actions {
-  text-align: right;
-}
-
 .no-todos {
   text-align: center;
-}
-
-.toggle-completed-checkbox:before {
-  content: 'check_box_outline_blank';
-}
-
-li.completed .toggle-completed-checkbox:before {
-  content: 'check_box';
-}
-
-li.completed .todo-title {
-  text-decoration: line-through;
-  color: #757575;
-}
-
-li.completed i :not(no-click) {
-  color: #757575;
 }
 
 /* 1b */
@@ -178,9 +105,4 @@ li.completed i :not(no-click) {
 /* 1b */
  .HIGH {
 	color: #FF0000;
-}
-
-.no-click {
-	color: #bbb;
-	cursor: default;
 }

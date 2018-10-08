@@ -17,11 +17,17 @@
 				name="priority"> <a class="HIGH">HIGH</a>
 		</form>
 	</div>
-	<ul class="todo-list">
-		<li *ngFor="let todo of todos; first as isFirst; last as isLast">
+	<div class="todo-list">
+		<div *ngFor="let todo of todos; first as isFirst; last as isLast" [ngClass]="selectedTodo===todo ? 'selected-todo' : ''">
+			<button class="select-item-btn" (click)="selectTodo(todo)">►</button>
 			<app-todo-item [todo]="todo" [isFirst]="isFirst" [isLast]="isLast" [parent]="this"></app-todo-item>
-		</li>
-	</ul>
+			<!-- child -->
+			<div *ngFor="let child of todo.childs; first as cFirst; last as cLast" [ngClass]="selectedTodo===child ? 'selected-todo' : ''" class="child-section">
+				<button class="select-item-btn" (click)="selectTodo(child)">►</button>
+				<app-todo-item [todo]="child" [isFirst]="cFirst" [isLast]="cLast" [parent]="this"></app-todo-item>
+			</div>				
+		</div>
+	</div>
 	<div class="no-todos" *ngIf="todos && todos.length == 0">
 		<p>No Todos Found!</p>
 	</div>

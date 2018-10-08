@@ -106,3 +106,21 @@ input {
  .HIGH {
 	color: #FF0000;
 }
+
+
+.select-item-btn {
+	float: left;
+	background-color: #00ACCA;	
+	border: none;
+	border-radius: 3px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.selected-todo {
+	background-color: #AAEEDD;
+}
+
+.child-section {
+	padding-left: 30px;
+}

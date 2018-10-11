@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+	font-size: 18px;
+	line-height: 1.58;
+	font-family: "Arial";
+	background: #d53369;
+	background: -webkit-linear-gradient(to left, #cbad6d, #edcf8f);
+	background: linear-gradient(to left, #cbad6d, #edcf8f); 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  border: 1px solid #E8E8E8;
+}
+
+.form-control {
+  font-size: 16px;
+  padding-left: 15px;
+  outline: none;
+  border: 1px solid #E8E8E8;
+}
+
+.form-control:focus {
+  border: 1px solid #626262;
+}
+
+.form-control {
+  width: 100%;
+  height: 50px;
+}
+
+/* 1b */
+.LOW {
+	color: #008000;
+}
+
+/* 1b */
+ .MEDIUM {
+	color: #FFCC00;
+}
+
+/* 1b */
+ .HIGH {
+	color: #FF0000;
+}

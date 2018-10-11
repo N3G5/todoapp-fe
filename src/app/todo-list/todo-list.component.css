@@ -1,87 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
-
-body {
-  font-size: 18px;
-  line-height: 1.58;
-  background: #d53369;
-  background: -webkit-linear-gradient(to left, #cbad6d, #d53369);
-  background: linear-gradient(to left, #cbad6d, #d53369); 
-  color: #333;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-input {
-  border: 1px solid #E8E8E8;
-}
-
-.page-title {
-  text-align: center;
-}
-
-.todo-content {
-  max-width: 650px;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 60px;
-  background-color: #fff;
-  padding: 15px; 
-  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
-}
-
-.form-control {
-  font-size: 16px;
-  padding-left: 15px;
-  outline: none;
-  border: 1px solid #E8E8E8;
-}
-
-.form-control:focus {
-  border: 1px solid #626262;
-}
-
-.todo-content .form-control {
-  width: 100%;
-  height: 50px;
-}
-
-.todo-content .todo-create {
+.todo-create {
   padding-bottom: 30px;
   border-bottom: 1px solid #e8e8e8;
 }
 
-.todo-content .alert-danger {
+.alert-danger {
   padding-left: 15px;
   font-size: 14px;
   color: red;
   padding-top: 5px;
 }
 
-.todo-content ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  max-height: 450px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: -15px;
-  margin-right: -15px;
-  overflow-y: scroll;
-}
-
-.todo-content ul li {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #E8E8E8;
-}
-
-.todo-content .todo-title {
+.todo-title {
   width: calc(100% - 200px);
   margin-left: 10px;
   overflow: hidden;
@@ -90,19 +19,4 @@ input {
 
 .no-todos {
   text-align: center;
-}
-
-/* 1b */
-.LOW {
-	color: #008000;
-}
-
-/* 1b */
- .MEDIUM {
-	color: #FFCC00;
-}
-
-/* 1b */
- .HIGH {
-	color: #FF0000;
 }

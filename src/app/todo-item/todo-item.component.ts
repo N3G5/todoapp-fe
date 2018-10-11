@@ -34,7 +34,7 @@ export class TodoItemComponent implements OnInit {
     console.log(todoData);
     this.todoService.updateTodo(todoData)
       .then(updatedTodo => {
-        Object.assign(this.todo, updatedTodo);
+        this.parent.getTodos();
         this.clearEditing();
       });
   }
@@ -43,7 +43,7 @@ export class TodoItemComponent implements OnInit {
     todoData.completed = !todoData.completed;
     this.todoService.updateTodo(todoData)
       .then(updatedTodo => {
-        Object.assign(this.todo, updatedTodo);
+        this.parent.getTodos();
       });
   }
 

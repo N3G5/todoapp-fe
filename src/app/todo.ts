@@ -3,7 +3,7 @@ export class Todo {
   title: string;
   completed: boolean;
   createdAt: Date;
-  ranking: number; // 2a
+  ranking: number[]; // 2a
   priority: string; // 1a
   upperTask: string;
   childs: Todo[];

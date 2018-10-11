@@ -33,14 +33,8 @@ export class TodoListComponent implements OnInit {
     this.todoService.createTodo(this.newTodo).then(createTodo => {
       todoForm.reset();
       this.newTodo = new Todo();
-      // find selected todo parent item & add child
-      for (let i = 0; i < this.todos.length; i++) {
-        if (this.todos[i].id === this.selectedTodo.id) {          
-          // this.todos[i].unshiftChild(createTodo);
-          this.todos[i].childs.unshift(createTodo);
-          break;
-        }
-      }
+      // update all tasks, because the ranks changed
+      this.getTodos();
       this.selectedTodo = new Todo();
     });
   }

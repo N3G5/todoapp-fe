@@ -88,7 +88,7 @@ div.completed .todo-title {
   color: #757575;
 }
 
-div.completed i :not(no-click) {
+div.completed :not(no-click) {
   color: #757575;
 }
 
@@ -110,4 +110,26 @@ div.completed i :not(no-click) {
 .no-click {
 	color: #bbb;
 	cursor: default;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.select-item-btn {
+	float: left;
+	background-color: #00ACCA;	
+	border: none;
+	border-radius: 3px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.child-section {
+	padding-left: 30px;
+}
+
+
+.selected-todo {
+	background-color: #AAEEDD;
 }

@@ -1,9 +1,10 @@
-<div class="todo-row" *ngIf="!editing || editingTodo.id != todo.id"
-	[ngClass]="todo.completed==true ? 'completed' : ''" [class]="todo.priority">
+<div class="todo-row" *ngIf="!editing || editingTodo.id != todo.id" 	
+	[ngClass]="parent.selectedTodo.id===todo.id ? 'selected-todo' : ''"
+	[class.completed]="todo.completed" [class]="todo.priority">	
 	<a class="todo-completed" (click)="toggleCompleted(todo)">
 		<i class="material-icons toggle-completed-checkbox"></i>
 	</a>
-	<span class="todo-title"> {{todo.title}} </span>
+	<span  (click)="parent.selectTodo(todo)" class="todo-title clickable"> {{todo.title}} </span>
 	<span class="todo-actions">
 		<a (click)="editTodo(todo)"> <i class="material-icons edit">edit</i> </a>
 		<a (click)="deleteTodo(todo.id)"> <i class="material-icons delete">clear</i> </a>
@@ -27,4 +28,9 @@
 	<input type="radio" value="LOW" [(ngModel)]="editingTodo.priority" name="priority"> <a class="LOW">LOW</a>  
 	<input type="radio" value="MEDIUM"	[(ngModel)]="editingTodo.priority" name="priority"> <a class="MEDIUM">MEDIUM</a>  
 	<input type="radio" value="HIGH" [(ngModel)]="editingTodo.priority"	name="priority"> <a class="HIGH">HIGH</a>
+</div>
+
+<!-- childs  -->
+<div *ngFor="let child of todo.childs; first as cFirst; last as cLast" class="child-section">
+	<app-todo-item [todo]="child" [isFirst]="cFirst" [isLast]="cLast" [parent]="parent"></app-todo-item>
 </div>
